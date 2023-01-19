@@ -59,6 +59,7 @@ $ git clone git@github.com:luccarauedys/tweeteroo-api.git
     ```json
     [
       {
+        "id": 1,
         "avatar": "https://64.media.tumblr.com/b34bea474a465262543616113324ed1a/313038784a1dcba5-75/s640x960/4d2d099944ba5aa480a5abe48555d794c64078e1.png",
         "username": "scoobydoo",
         "text": "scooby dooby doo"
@@ -75,6 +76,7 @@ $ git clone git@github.com:luccarauedys/tweeteroo-api.git
     ```json
     [
       {
+        "id": 1,
         "avatar": "https://64.media.tumblr.com/b34bea474a465262543616113324ed1a/313038784a1dcba5-75/s640x960/4d2d099944ba5aa480a5abe48555d794c64078e1.png",
         "username": "scoobydoo",
         "text": "scooby dooby doo"
