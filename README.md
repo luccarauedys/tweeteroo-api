@@ -28,13 +28,13 @@ $ git clone git@github.com:luccarauedys/tweeteroo-api.git
 
 ## 🔀 Rotas
 
-- **POST** /api/users
+- **POST** /api/auth/sign-up
 
   - O body da request deve ter o seguinte formato:
     ```json
     {
-      "username": "scoobydoo",
-      "avatar": "https://64.media.tumblr.com/b34bea474a465262543616113324ed1a/313038784a1dcba5-75/s640x960/4d2d099944ba5aa480a5abe48555d794c64078e1.png"
+      "avatar": "https://64.media.tumblr.com/b34bea474a465262543616113324ed1a/313038784a1dcba5-75/s640x960/4d2d099944ba5aa480a5abe48555d794c64078e1.png",
+      "username": "scoobydoo"
     }
     ```
 
@@ -45,7 +45,7 @@ $ git clone git@github.com:luccarauedys/tweeteroo-api.git
     ```json
     {
       "username": "scoobydoo",
-      "tweet": "where's my scooby snack?"
+      "text": "where's my scooby snack?"
     }
     ```
 
@@ -59,9 +59,9 @@ $ git clone git@github.com:luccarauedys/tweeteroo-api.git
     ```json
     [
       {
-        "username": "scoobydoo",
         "avatar": "https://64.media.tumblr.com/b34bea474a465262543616113324ed1a/313038784a1dcba5-75/s640x960/4d2d099944ba5aa480a5abe48555d794c64078e1.png",
-        "tweet": "scooby dooby doo"
+        "username": "scoobydoo",
+        "text": "scooby dooby doo"
       }
     ]
     ```
@@ -75,9 +75,9 @@ $ git clone git@github.com:luccarauedys/tweeteroo-api.git
     ```json
     [
       {
-        "username": "scoobydoo",
         "avatar": "https://64.media.tumblr.com/b34bea474a465262543616113324ed1a/313038784a1dcba5-75/s640x960/4d2d099944ba5aa480a5abe48555d794c64078e1.png",
-        "tweet": "scooby dooby doo"
+        "username": "scoobydoo",
+        "text": "scooby dooby doo"
       }
     ]
     ```
