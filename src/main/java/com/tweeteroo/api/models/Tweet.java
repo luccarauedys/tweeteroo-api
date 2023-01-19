@@ -21,7 +21,7 @@ public class Tweet {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  @Column(nullable = false)
+  @Column
   private String avatar;
 
   @Column(length = 20, nullable = false)

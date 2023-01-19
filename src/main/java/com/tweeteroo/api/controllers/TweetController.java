@@ -10,25 +10,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tweeteroo.api.models.Tweet;
 import com.tweeteroo.api.models.User;
+import com.tweeteroo.api.repositories.TweetRepository;
 import com.tweeteroo.api.repositories.UserRepository;
 
 @RestController
-@RequestMapping("/api/auth")
-public class AuthController {
+@RequestMapping("/api/tweets")
+public class TweetController {
   @Autowired
-  private UserRepository repository;
+  private TweetRepository tweetRepository;
 
-  @PostMapping("/sign-up")
-  public ResponseEntity<String> signUp(@RequestBody User userData) {
+  @Autowired
+  private UserRepository userRepository;
+
+  @PostMapping
+  public ResponseEntity<String> create(@RequestBody Tweet tweetData) {
     try {
-      List<User> user = repository.findByUsername(userData.getUsername());
+      List<User> user = userRepository.findByUsername(tweetData.getUsername());
 
-      if (user.size() > 0) {
-        return ResponseEntity.status(409).body("this username is already in use");
+      if (user.size() == 0) {
+        return ResponseEntity.status(404).body("unable to post tweet, user not found");
       }
 
-      repository.save(userData);
+      String avatar = user.get(0).getAvatar();
+
+      tweetData.setAvatar(avatar);
+
+      tweetRepository.save(tweetData);
     } catch (Exception e) {
       if (e instanceof DataIntegrityViolationException) {
         return ResponseEntity.status(400).body(e.getMessage());

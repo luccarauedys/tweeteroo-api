@@ -24,6 +24,6 @@ public class User {
   @Column(nullable = false)
   private String avatar;
 
-  @Column(length = 20, nullable = false)
+  @Column(length = 20, unique = true, nullable = false)
   private String username;
 }
